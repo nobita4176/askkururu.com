@@ -5,8 +5,10 @@
 		fetch(
 			'./js/furuyoni_cards.json'
 		).then(function(res) {
-			global.cards = res.json();
-			console.log(global.cards);
+			res.json().then(function(cards) {
+				global.cards = cards;
+				console.log(global.cards);
+			});
 		});
 	};
 	document.addEventListener('DOMContentLoaded', fetch_dict);
