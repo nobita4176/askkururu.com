@@ -12,12 +12,12 @@
 	});
 
 	var pick = function(pool) {
-		return shuffle(pool).splice(0, 3);
+		return shuffle(pool).splice(0, 2);
 	};
 
 	var shuffle = function(a) {
-		var aa = a.slice(0. a.length); // copy
-		for (var i = aa.length - 1; i > 0; i--){
+		var aa = a.slice(0, a.length); // copy
+		for (var i = aa.length - 1; i > 0; i--) {
 			var r = Math.floor(Math.random() * (i + 1));
 			var tmp = aa[i];
 			aa[i] = aa[r];
