@@ -42,6 +42,11 @@
 
 		modal.find('.card').each(function(i, e) {
 			$(e).find('.name').text('「'+result[i].name+'」');
+			$(e).removeClass('atk act enh rea thr');
+			result[i].type.forEach(function(t) {
+				var map = {'攻':'atk', '行':'act', '付':'enh', '対':'rea', '全':'thr'};
+				$(e).addClass(map[t]);
+			});
 		});
 		$('#modal').fadeIn();
 	});
