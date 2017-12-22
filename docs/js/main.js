@@ -4,7 +4,7 @@
 	var cards;
 	document.addEventListener('DOMContentLoaded', function() {
 		fetch(
-			'./furuyoni_cards.json'
+			'./js/furuyoni_cards.json'
 		).then(function(res) {
 			cards = res.json();
 			console.log(cards);
