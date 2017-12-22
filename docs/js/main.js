@@ -11,10 +11,10 @@
 			});
 		});
 	};
-	document.addEventListener('DOMContentLoaded', fetch_dict);
+	$(document).on('DOMContentLoaded', fetch_dict);
 
 	var pick = function(pool) {
-		return shuffle(pool).splice(0, 2);
+		return shuffle(pool).splice(0, 3);
 	};
 
 	var shuffle = function(a) {
@@ -28,12 +28,25 @@
 		return aa;
 	};
 
-	document.querySelector('main').addEventListener('click', function() {
+	$('main').on('click', function() {
 		if (! global.cards) {
 			fetch_dict();
 			return;
 		}
+
 		var result = pick(global.cards.normal, 3);
 		console.log(result.map(function(c) {return c.name;}));
+
+		var modal = $('#modal');
+		if (modal.length <= 0) {console.error('#modal not found.'); return;}
+
+		modal.find('.card').each(function(i, e) {
+			$(e).find('.name').text('「'+result[i].name+'」');
+		});
+		$('#modal').fadeIn();
 	});
+
+	$('#modal').on('click', function() {
+		$('#modal').fadeOut();
+	})
 })(window);

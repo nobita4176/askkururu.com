@@ -10,14 +10,37 @@ body {
 	margin: 0;
 	font-size: 12pt;
 }
+
 main {
 	background: url("../img/tarot_10.png") no-repeat center/contain;
 	margin: auto;
 	height: calc(100% - 3rem);
 	vertical-align: middle;
+	cursor: pointer;
 }
+
 footer {
 	height: 3rem;
 	text-align: right;
 	padding: 0 2rem;
+}
+
+#modal {
+	display: flex;
+	position: fixed;
+	top: 10%; bottom: 10%; right: 10%; left: 10%;
+	width: 80%; height: 80%;
+	vertical-align: middle;
+	flex-direction: column;
+	justify-content: space-around;
+	text-align: center;
+	cursor: pointer;
+}
+#modal .card {
+	font-size: 3rem;
+	line-height: 1;
+	background-color: #aaccee;
+	border: 0.5rem solid #668899;
+	border-radius: 1rem;
+	padding: 1rem 0;
 }
