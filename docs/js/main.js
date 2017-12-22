@@ -1,15 +1,15 @@
-(function() {
+(function(global) {
 	'use strict';
 
-	var cards;
-	document.addEventListener('DOMContentLoaded', function() {
+	var fetch_dict = function() {
 		fetch(
 			'./js/furuyoni_cards.json'
 		).then(function(res) {
-			cards = res.json();
-			console.log(cards);
+			global.cards = res.json();
+			console.log(global.cards);
 		});
-	});
+	};
+	document.addEventListener('DOMContentLoaded', fetch_dict);
 
 	var pick = function(pool) {
 		return shuffle(pool).splice(0, 2);
@@ -27,7 +27,11 @@
 	};
 
 	document.querySelector('main').addEventListener('click', function() {
-		var result = pick(cards.normal, 3);
+		if (! global.cards) {
+			fetch_dict();
+			return;
+		}
+		var result = pick(global.cards.normal, 3);
 		console.log(result.map(function(c) {return c.name;}));
 	});
-})();
+})(window);
