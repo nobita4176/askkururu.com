@@ -28,13 +28,13 @@ footer {
 #modal {
 	display: flex;
 	position: fixed;
-	top: 10%; bottom: 10%;
-	width: 100%; height: 80%;
+	top: 0%;
+	width: 100%; height: 100%;
 	vertical-align: middle;
 	flex-direction: column;
 	justify-content: space-around;
 	text-align: center;
-	background-color: #00000020;
+	background-color: #00000030;
 	cursor: pointer;
 }
 #modal .card {
@@ -56,22 +56,22 @@ footer {
 	background-color: #cceeaa;
 }
 #modal .card.rea.atk {
-	background-image: linear-gradient(80deg, #eeaacc 33%, #ee99ee 67%);
+	background-image: linear-gradient(135deg, #eeaacc 38%, #ee99ee 62%);
 }
 #modal .card.rea.act {
-	background-image: linear-gradient(80deg, #aaccee 33%, #ee99ee 67%);
+	background-image: linear-gradient(135deg, #aaccee 38%, #ee99ee 62%);
 }
 #modal .card.rea.enh {
-	background-image: linear-gradient(80deg, #cceeaa 33%, #ee99ee 67%);
+	background-image: linear-gradient(135deg, #cceeaa 38%, #ee99ee 62%);
 }
 #modal .card.thr.atk {
-	background-image: linear-gradient(80deg, #eeaacc 33%, #eeee99 67%);
+	background-image: linear-gradient(135deg, #eeaacc 38%, #eeee99 62%);
 }
 #modal .card.thr.act {
-	background-image: linear-gradient(80deg, #aaccee 33%, #eeee99 67%);
+	background-image: linear-gradient(135deg, #aaccee 38%, #eeee99 62%);
 }
 #modal .card.thr.enh {
-	background-image: linear-gradient(80deg, #cceeaa 33%, #eeee99 67%);
+	background-image: linear-gradient(135deg, #cceeaa 38%, #eeee99 62%);
 }
 #modal .card.inactive {
 	opacity: 0.5;
