@@ -54,7 +54,7 @@
 		$('#modal').fadeIn();
 	});
 
-	$('#modal').on('dblclick', function(ev) {
+	$('#modal').on('dblclick taphold', function(ev) {
 		$('#modal').fadeOut();
 	});
 
