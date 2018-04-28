@@ -54,8 +54,21 @@
 		$('#modal').fadeIn();
 	});
 
-	$('#modal').on('dblclick taphold', function(ev) {
+	$('#modal').on('dblclick', function(ev) {
 		$('#modal').fadeOut();
+	});
+
+	var taphold_threshold = 750;
+	var taphold_timer_id = null;
+	$('#modal').on('mousedown', function(ev) {
+		taphold_timer_id = setTimeout(function() {
+			$('#modal').fadeOut();
+			taphold_timer_id = null;
+		}, taphold_threshold);
+	});
+	$('#modal').on('mouseup', function(ev) {
+		if (taphold_timer_id) {clearTimeout(taphold_timer_id);}
+		taphold_timer_id = null;
 	});
 
 	$('#modal .card').on('click', function(ev) {
