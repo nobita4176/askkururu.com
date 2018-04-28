@@ -47,7 +47,7 @@
 			$(e).find('.name').text('「'+result[i].name+'」');
 			$(e).removeClass('atk act enh rea thr inactive');
 			result[i].type.forEach(function(t) {
-				var map = {'攻':'atk', '行':'act', '付':'enh', '対':'rea', '全':'thr'};
+				var map = {'攻':'atk', '行':'act', '付':'enh', '対':'rea', '全':'thr', '?':'unknown'};
 				$(e).addClass(map[t]);
 			});
 		});

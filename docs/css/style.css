@@ -104,6 +104,9 @@ footer {
 #modal .card.thr.enh {
 	background-image: linear-gradient(135deg, #cceeaa 38%, #eeee99 62%);
 }
+#modal .card.unknown {
+	background-color: #ffffff;
+}
 #modal .card.inactive {
 	opacity: 0.5;
 }
