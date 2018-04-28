@@ -28,14 +28,17 @@
 		return aa;
 	};
 
+	var use_origin = false;
+
 	$('main').on('click', function() {
 		if (! global.cards) {
 			fetch_dict();
 			return;
 		}
 
-		var result = pick(global.cards.normal, 3);
-		console.log(result.map(function(c) {return c.name;}));
+		var pool = use_origin ? global.cards.normal.concat(global.cards.origin_normal) : global.cards.normal;
+		var result = pick(pool, 3);
+		// console.log(result.map(function(c) {return c.name;}));
 
 		var modal = $('#modal');
 		if (modal.length <= 0) {console.error('#modal not found.'); return;}
@@ -59,5 +62,10 @@
 		$('#modal .card').addClass('inactive');
 		$(this).removeClass('inactive');
 		ev.stopPropagation();
+	});
+
+	$('#button-origin').on('click', function(ev) {
+		$(this).toggleClass('on');
+		use_origin = !(use_origin);
 	});
 })(window);
