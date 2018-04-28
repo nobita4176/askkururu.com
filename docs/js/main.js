@@ -51,13 +51,13 @@
 		$('#modal').fadeIn();
 	});
 
-	$('#modal').on('click', function() {
+	$('#modal').on('dblclick', function(ev) {
 		$('#modal').fadeOut();
-	})
+	});
 
 	$('#modal .card').on('click', function(ev) {
 		$('#modal .card').addClass('inactive');
 		$(this).removeClass('inactive');
 		ev.stopPropagation();
-	})
+	});
 })(window);
