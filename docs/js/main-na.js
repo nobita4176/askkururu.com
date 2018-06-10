@@ -3,7 +3,7 @@
 
 	var fetch_dict = function() {
 		fetch(
-			'./js/furuyoni_cards.json'
+			'./js/furuyoni_na_cards.json'
 		).then(function(res) {
 			res.json().then(function(cards) {
 				global.cards = cards;
@@ -36,7 +36,7 @@
 			return;
 		}
 
-		var pool = use_origin ? global.cards.normal.concat(global.cards.origin_normal) : global.cards.normal;
+		var pool = global.cards.normal.filter(function(e) {return e.category === '通常札';});
 		var result = pick(pool, 3);
 		// console.log(result.map(function(c) {return c.name;}));
 
@@ -46,10 +46,10 @@
 		modal.find('.card').each(function(i, e) {
 			$(e).find('.name').text('「'+result[i].name+'」');
 			$(e).removeClass('atk act enh rea thr unknown inactive');
-			result[i].type.forEach(function(t) {
-				var map = {'攻':'atk', '行':'act', '付':'enh', '対':'rea', '全':'thr', '?':'unknown'};
-				$(e).addClass(map[t]);
-			});
+
+			var map = {'攻撃':'atk', '行動':'act', '付与':'enh', '対応':'rea', '全力':'thr', '?':'unknown'};
+			if (result[i].maintype) {$(e).addClass(map[result[i].maintype]);}
+			if (result[i].subtype) {$(e).addClass(map[result[i].subtype]);}
 		});
 		$('#modal').fadeIn();
 	});
@@ -80,9 +80,5 @@
 	$('#button-origin').on('click', function(ev) {
 		$(this).toggleClass('on');
 		use_origin = !(use_origin);
-	});
-
-	$('#button-na').on('click', function(ev) {
-		global.location.assign(global.location.href.replace(/index.html$/, 'index-na.html'));
 	});
 })(window);

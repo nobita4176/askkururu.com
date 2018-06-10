@@ -32,7 +32,7 @@ footer {
 	top: 0%;
 	right: 0%;
 	width: 15vmin; height: 15vmin;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
 }
 
@@ -42,6 +42,10 @@ footer {
 	border: 2px solid transparent;
 	border-radius: 3px;
 	cursor: pointer;
+	opacity: 0.2;
+}
+#button > button.on {
+	opacity: 1;
 }
 #button > button:hover {
 	border: 2px outset gray;
@@ -49,10 +53,9 @@ footer {
 
 #button-origin {
 	background: url('../img/origin.png') no-repeat center/contain;
-	opacity: 0.2;
 }
-#button-origin.on {
-	opacity: 1;
+#button-na {
+	background: url('../img/na.png') no-repeat center/contain;
 }
 
 #modal {
