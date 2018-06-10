@@ -83,6 +83,6 @@
 	});
 
 	$('#button-na').on('click', function(ev) {
-		global.location.assign(global.location.href.replace(/index.html$/, 'index-na.html'));
+		global.location.assign(global.location.href.replace(/\/(index\.html)?$/, '/index-na.html'));
 	});
 })(window);
