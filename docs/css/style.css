@@ -39,6 +39,7 @@ footer {
 #button > button {
 	flex-grow: 1;
 	width: 100%;
+	min-height: 16vmin;
 	border: 2px solid transparent;
 	border-radius: 3px;
 	cursor: pointer;
