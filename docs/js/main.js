@@ -58,6 +58,10 @@
 		$('#modal').fadeOut();
 	});
 
+	$('#modal #close').on('click', function(ev) {
+		$('#modal').fadeOut();
+	});
+
 	var taphold_threshold = 750;
 	var taphold_timer_id = null;
 	$('#modal').on('mousedown', function(ev) {
