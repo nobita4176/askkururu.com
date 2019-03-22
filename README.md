@@ -1,7 +1,7 @@
 # AskKururu.com
 
 ## なにこれ
-+ [「桜降る代に決闘を」](http://bakafire.main.jp/furuyoni/analogindex.html) オリジナル大乱闘「AskKururu.com」用ふるよに通常札ランダマイザ
++ [「桜降る代に決闘を」](https://main-bakafire.ssl-lolipop.jp//furuyoni/na/index.html) オリジナル大乱闘「AskKururu.com」用ふるよに通常札ランダマイザ
 
 ## 大乱闘「AskKururu.com」
 + \[眼前構築\]
@@ -19,5 +19,5 @@
     + [option] 眼前構築時点でライラを宿していなかった場合,カードは帯電しないものとする.
 
 ## 付記
-+ 本アプリは[「ふるよにコモンズ」](http://bakafire.main.jp/furuyoni/rule.html)を使用しています.
-> ふるよにコモンズ by BakaFire, TOKIAME is licensed under aクリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際 ライセンス
++ 本アプリは[「ふるよにコモンズ」](https://main-bakafire.ssl-lolipop.jp//furuyoni/rule.html)を使用しています.
+> ふるよにコモンズ by BakaFire, TOKIAME
