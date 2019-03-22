@@ -19,6 +19,10 @@ main {
 	cursor: pointer;
 }
 
+main.old {
+	background-image: url("../img/tarot_10_old.png");
+}
+
 footer {
 	height: 3rem;
 	text-align: right;
