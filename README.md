@@ -1,9 +1,9 @@
-# AskKururu.com
+# くるるん☆らぼ
 
 ## なにこれ
-+ [「桜降る代に決闘を」](https://main-bakafire.ssl-lolipop.jp//furuyoni/na/index.html) オリジナル大乱闘「AskKururu.com」用ふるよに通常札ランダマイザ
++ [「桜降る代に決闘を」](https://main-bakafire.ssl-lolipop.jp//furuyoni/na/index.html) オリジナル大乱闘 ~~「AskKururu.com」~~ *「くるるんにきいてみて」* 用ふるよに通常札ランダマイザ
 
-## 大乱闘「AskKururu.com」
+## 大乱闘 ~~「AskKururu.com」~~ *「くるるんにきいてみて」*
 + \[眼前構築\]
     + 禁止カード: 「いんだすとりあ」
     + それぞれのプレイヤーは,必ず「でゅーぷりぎあ」3枚を通常札としてデッキに含める.
