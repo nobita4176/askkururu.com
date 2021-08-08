@@ -1,6 +1,6 @@
 import {
 	pick,
-	fetch_dict,
+	fetch_dict_legacy,
 } from './dict';
 import type {
 	Dictionary,
@@ -18,11 +18,12 @@ import type {
 		'?': 'unknown',
 	};
 	let dict: Dictionary | null = null;
+	let origin_includes: boolean = false;
 	const taphold_threshold: number = 750;
 	let taphold_timer_id: number | null = null;
 
 	const ready = async function() {
-		dict = await fetch_dict();
+		dict = await fetch_dict_legacy();
 	};
 
 
@@ -33,7 +34,9 @@ import type {
 			await ready();
 		}
 
-		const pool: Card[] = dict!.normal.filter(function(e: Card) {return e.category === '通常札';});
+		const pool: Card[] = origin_includes
+			? dict!.normal.filter(function(e: Card) {return e.category === '通常札';}).concat(dict!.origin_normal!.filter(function(e: Card) {return e.category === '通常札';}))
+			: dict!.normal.filter(function(e: Card) {return e.category === '通常札';});
 		const result: Card[] = pick(pool, 3);
 		// console.log(result.map(function(c) {return c.name;}));
 
@@ -83,7 +86,13 @@ import type {
 	});
 
 
+	$('#button-origin').on('click', function() {
+		origin_includes = ! origin_includes;
+		$(this).toggleClass('on', origin_includes);
+	});
+
+
 	$('#button-na').on('click', function() {
-		window.location.assign('/index2.html');
+		window.location.assign('/index.html');
 	});
 })();
