@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "name": "askkururu.com",
+  "version": "1.0.0",
+  "description": "「くるるんにきいてみて」用ふるよに通常札ランダマイザ",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx snowpack dev",
+    "build": "npx snowpack build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nobita4176/askkururu.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://nobita4176.github.io/askkururu.com/",
+  "devDependencies": {
+    "@types/jquery": "^3.5.6",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
+    "eslint": "^7.32.0",
+    "snowpack": "^3.8.3",
+    "typescript": "^4.3.5"
+  }
+}
