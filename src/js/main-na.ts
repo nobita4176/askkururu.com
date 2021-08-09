@@ -84,6 +84,6 @@ import type {
 
 
 	$('#button-na').on('click', function() {
-		window.location.assign('/index2.html');
+		window.location.assign('./index2.html');
 	});
 })();
