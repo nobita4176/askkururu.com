@@ -18,15 +18,25 @@ import type {
 		'?': 'unknown',
 	};
 	let dict: Dictionary | null = null;
+	let lang: string = 'ja';
 	const taphold_threshold: number = 750;
 	let taphold_timer_id: number | null = null;
 
 	const ready = async function() {
-		dict = await fetch_dict();
+		const filename_map: Record<string, string> = {
+			'ja': 'furuyoni_na_cards.json',
+			'kr': 'furuyoni_na_cards.kr.json',
+		};
+		if (! (lang in filename_map)) {
+			throw new TypeError();
+		}
+		dict = await fetch_dict(filename_map[lang]);
 	};
 
 
-	$(window).on('DOMContentLoaded', ready);
+	$(window).on('DOMContentLoaded', function() {
+		ready();
+	});
 
 	$(document).on('click', 'main', async function() {
 		if (dict == null) {
@@ -80,6 +90,12 @@ import type {
 		$('#modal .card').addClass('inactive');
 		$(this).removeClass('inactive');
 		ev.stopPropagation();
+	});
+
+
+	$(document).on('change', '#select-lang', function() {
+		lang = String($(this).val()) ?? 'ja';
+		ready();
 	});
 
 
