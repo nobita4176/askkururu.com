@@ -26,7 +26,10 @@ import {
     dict = await fetch_dict(filename_map[lang]);
   };
   $(window).on("DOMContentLoaded", function() {
+    lang = $("#select-lang").val() ?? "ja";
     ready();
+    $('#button-lang .option[data-value="' + lang + '"]').addClass("selected");
+    $('#button-lang .option:not([data-value="' + lang + '"])').removeClass("selected");
   });
   $(document).on("click", "main", async function() {
     if (dict == null) {
