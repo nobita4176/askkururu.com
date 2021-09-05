@@ -32,7 +32,7 @@ footer {
 #button {
 	display: flex;
 	position: fixed;
-	z-index: 2;
+	z-index: 1;
 	top: 0%;
 	right: 0%;
 	width: 15vmin; height: 15vmin;
@@ -66,7 +66,7 @@ footer {
 #modal {
 	display: flex;
 	position: fixed;
-	z-index: 1;
+	z-index: 2;
 	top: 0%;
 	width: 100%; height: 100%;
 	vertical-align: middle;
@@ -130,6 +130,31 @@ footer {
 	text-align: center;
 	cursor: pointer;
 	background-color: rgba(255, 255, 255, 0.7);
+}
+
+#select-lang {
+	display: none;
+}
+#button-lang .option {
+	text-align: center;
+	cursor: pointer;
+	border-radius: 4px;
+}
+#button-lang:not(.active) .option:not(.selected) {
+	display: none;
+}
+#button-lang:not(.active) .option:hover,
+#button-lang.active .option.selected {
+	outline: 2px solid #4d90fe;
+}
+#button-lang .option img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: inherit;
+}
+#button-lang.active .option:not(:hover) img {
+	filter: grayscale(1) brightness(2);
 }
 
 

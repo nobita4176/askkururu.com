@@ -12,13 +12,23 @@ import {
     "?": "unknown"
   };
   let dict = null;
+  let lang = "ja";
   const taphold_threshold = 750;
   let taphold_timer_id = null;
   const ready = async function() {
-    dict = await fetch_dict();
+    const filename_map = {
+      ja: "furuyoni_na_cards.json",
+      kr: "furuyoni_na_cards.kr.json"
+    };
+    if (!(lang in filename_map)) {
+      throw new TypeError();
+    }
+    dict = await fetch_dict(filename_map[lang]);
   };
-  $(window).on("DOMContentLoaded", ready);
-  $("main").on("click", async function() {
+  $(window).on("DOMContentLoaded", function() {
+    ready();
+  });
+  $(document).on("click", "main", async function() {
     if (dict == null) {
       await ready();
     }
@@ -43,30 +53,44 @@ import {
     });
     $("#modal").fadeIn();
   });
-  $("#modal").on("dblclick", function() {
+  $(document).on("dblclick", "#modal", function() {
     $("#modal").fadeOut();
   });
-  $("#modal #close").on("click", function() {
+  $(document).on("click", "#modal #close", function() {
     $("#modal").fadeOut();
   });
-  $("#modal").on("mousedown", function() {
+  $(document).on("mousedown", "#modal", function() {
     taphold_timer_id = window.setTimeout(function() {
       $("#modal").fadeOut();
       taphold_timer_id = null;
     }, taphold_threshold);
   });
-  $("#modal").on("mouseup", function() {
+  $(document).on("mouseup", "#modal", function() {
     if (taphold_timer_id) {
       window.clearTimeout(taphold_timer_id);
     }
     taphold_timer_id = null;
   });
-  $("#modal .card").on("click", function(ev) {
+  $(document).on("click", "#modal .card", function(ev) {
     $("#modal .card").addClass("inactive");
     $(this).removeClass("inactive");
     ev.stopPropagation();
   });
-  $("#button-na").on("click", function() {
+  $(document).on("change", "#select-lang", function() {
+    lang = String($(this).val()) ?? "ja";
+    ready();
+  });
+  $(document).on("click", "#button-lang", function() {
+    $(this).addClass("active");
+  });
+  $(document).on("click", "#button-lang.active .option", function(ev) {
+    ev.stopPropagation();
+    $("#button-lang .option.selected").removeClass("selected");
+    $(this).addClass("selected");
+    $("#button-lang").removeClass("active");
+    $("#select-lang").val($(this).attr("data-value")).trigger("change");
+  });
+  $(document).on("click", "#button-na", function() {
     window.location.assign("./index2.html");
   });
 })();

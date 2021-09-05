@@ -97,6 +97,16 @@ import type {
 		lang = String($(this).val()) ?? 'ja';
 		ready();
 	});
+	$(document).on('click', '#button-lang', function() {
+		$(this).addClass('active');
+	});
+	$(document).on('click', '#button-lang.active .option', function(ev) {
+		ev.stopPropagation();
+		$('#button-lang .option.selected').removeClass('selected');
+		$(this).addClass('selected');
+		$('#button-lang').removeClass('active');
+		$('#select-lang').val($(this).attr('data-value')).trigger('change');
+	});
 
 
 	$(document).on('click', '#button-na', function() {
