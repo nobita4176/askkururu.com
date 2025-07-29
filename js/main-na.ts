@@ -35,7 +35,7 @@ import type {
 
 
 	$(window).on('DOMContentLoaded', function() {
-		lang = $('#select-lang').val() ?? 'ja';
+		lang = String($('#select-lang').val()) ?? 'ja';
 		ready();
 		$('#button-lang .option[data-value="' + lang + '"]').addClass('selected');
 		$('#button-lang .option:not([data-value="' + lang + '"])').removeClass('selected');

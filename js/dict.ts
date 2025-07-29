@@ -34,7 +34,7 @@ const shuffle = function<T>(a: T[]): T[] {
 };
 
 const fetch_dict = async function(filename?: string): Promise<Dictionary> {
-	let response = await window.fetch('./js/' + (filename ?? 'furuyoni_na_cards.json'));
+	let response = await window.fetch('/json/' + (filename ?? 'furuyoni_na_cards.json'));
 	let dict: Dictionary = await response.json();
 	return dict;
 };
@@ -67,7 +67,7 @@ const fetch_dict_legacy = async function(filename?: string): Promise<Dictionary>
 		'全': '全力',
 	};
 
-	let response = await window.fetch('./js/' + (filename ?? 'furuyoni_cards.json'));
+	let response = await window.fetch('./json/' + (filename ?? 'furuyoni_cards.json'));
 	let data: LegacyDictionary = await response.json();
 
 	let dict: Dictionary = {

@@ -12,7 +12,7 @@ body {
 }
 
 main {
-	background: url("../img/tarot_10.png") no-repeat center/contain;
+	background: url("/img/tarot_10.png") no-repeat center/contain;
 	margin: auto;
 	height: calc(100% - 3rem);
 	vertical-align: middle;
@@ -20,7 +20,7 @@ main {
 }
 
 main.old {
-	background-image: url("../img/tarot_10_old.png");
+	background-image: url("/img/tarot_10_old.png");
 }
 
 footer {
@@ -57,10 +57,10 @@ footer {
 }
 
 #button-origin {
-	background: url('../img/origin.png') no-repeat center/contain;
+	background: url('/img/origin.png') no-repeat center/contain;
 }
 #button-na {
-	background: url('../img/na.png') no-repeat center/contain;
+	background: url('/img/na.png') no-repeat center/contain;
 }
 
 #modal {
